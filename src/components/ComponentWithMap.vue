@@ -1,21 +1,18 @@
-<template>
-  <GMapMap
-    :center="center"
-    :zoom="10"
-    map-type-id="terrain"
-    style="width: 100vw; height: 20rem"
-  >
-    <GMapCluster :zoomOnClick="true">
-      <GMapMarker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        :clickable="true"
-        :draggable="true"
-        @click="center = m.position"
-      />
-    </GMapCluster>
-  </GMapMap>
+<template >
+  <div>
+
+
+<input type="text" placeholder="teste" />
+      <GMapAutocomplete
+       placeholder="Local xyz"
+       @place_changed="setPlace"
+    >
+  </GMapAutocomplete>
+
+
+
+
+  </div>
 </template>
 
 <script>
@@ -51,11 +48,24 @@ export default {
       ],
     };
   },
+  methods: {
+    setPlace() {
+    }
+  }
 };
 </script>
 
 <style>
-body {
-  margin: 0;
+div.ex1 {
+
+  width: 800px;
+  height: 600px;
+  align-content: center;
+  text-align: center;
+
+
+  border: 3px solid #73AD21;
 }
+
+
 </style>
